@@ -56,8 +56,8 @@ Add screenshots of your projects here.
 
 **Sanket Bacchanna**
 
-* GitHub: https://github.com/your-username
-* LinkedIn: https://www.linkedin.com/in/your-profile
+* GitHub: https://github.com/Sanketbacchanna
+* LinkedIn: https://www.linkedin.com/in/sanketbacchanna
 
 ---
 
