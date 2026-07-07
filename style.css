@@ -166,7 +166,22 @@ main {
 .event-card h3 {
     font-size: 1.5rem;
     color: var(--text-primary);
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.event-details span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .event-card p {
