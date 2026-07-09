@@ -220,6 +220,18 @@ main {
     box-shadow: 0 5px 15px rgba(99, 102, 241, 0.4);
 }
 
+.btn-book.booked {
+    background: linear-gradient(135deg, #10b981, #059669);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+    transform: scale(0.98);
+}
+
+.btn-book.booked:hover {
+    opacity: 1;
+    transform: scale(0.98);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+}
+
 /* Footer Styling */
 footer {
     background-color: rgba(30, 41, 59, 0.8);
