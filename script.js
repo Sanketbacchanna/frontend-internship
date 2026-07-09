@@ -49,10 +49,34 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
             
             // Extract values
-            const name = document.getElementById('name').value;
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
             const eventSelect = document.getElementById('event-select');
+            const eventValue = eventSelect.value;
             const eventName = eventSelect.options[eventSelect.selectedIndex].text;
-            const tickets = document.getElementById('ticket-count').value;
+            const tickets = document.getElementById('ticket-count').value.trim();
+            
+            // Simple Front-End Validation
+            if (!name || !email || !eventValue || !tickets) {
+                formMessage.textContent = 'Error: Please fill out all required fields before submitting.';
+                formMessage.className = 'form-message error';
+                
+                // Hide error message after 4 seconds
+                setTimeout(() => {
+                    formMessage.classList.add('hidden');
+                }, 4000);
+                
+                return; // Stop form submission execution
+            }
+
+            // Basic email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                formMessage.textContent = 'Error: Please enter a valid email address.';
+                formMessage.className = 'form-message error';
+                setTimeout(() => formMessage.classList.add('hidden'), 4000);
+                return;
+            }
             
             // Show success message
             formMessage.textContent = `Thank you, ${name}! You have successfully booked ${tickets} ticket(s) for ${eventName}.`;
