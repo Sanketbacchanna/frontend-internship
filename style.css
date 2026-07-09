@@ -189,6 +189,27 @@ main {
     color: var(--text-secondary);
 }
 
+.event-details.hidden {
+    display: none;
+}
+
+.btn-toggle-details {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-toggle-details:hover {
+    background: rgba(99, 102, 241, 0.1);
+}
+
 .event-details span {
     display: flex;
     align-items: center;

@@ -18,4 +18,24 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    // Select all 'Show Details' buttons
+    const toggleButtons = document.querySelectorAll('.btn-toggle-details');
+
+    toggleButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Find the corresponding event details div (next sibling)
+            const details = this.nextElementSibling;
+            
+            // Toggle the 'hidden' class to show/hide details
+            details.classList.toggle('hidden');
+            
+            // Update button text based on visibility state
+            if (details.classList.contains('hidden')) {
+                this.textContent = 'Show Details';
+            } else {
+                this.textContent = 'Hide Details';
+            }
+        });
+    });
 });
