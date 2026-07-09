@@ -38,4 +38,33 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+
+    // Form submission handling
+    const bookingForm = document.getElementById('booking-form');
+    const formMessage = document.getElementById('form-message');
+
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', function(event) {
+            // Prevent actual form submission and page reload
+            event.preventDefault();
+            
+            // Extract values
+            const name = document.getElementById('name').value;
+            const eventSelect = document.getElementById('event-select');
+            const eventName = eventSelect.options[eventSelect.selectedIndex].text;
+            const tickets = document.getElementById('ticket-count').value;
+            
+            // Show success message
+            formMessage.textContent = `Thank you, ${name}! You have successfully booked ${tickets} ticket(s) for ${eventName}.`;
+            formMessage.className = 'form-message success';
+            
+            // Clear the form
+            bookingForm.reset();
+            
+            // Automatically hide message after 6 seconds
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 6000);
+        });
+    }
 });

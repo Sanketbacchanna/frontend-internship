@@ -115,6 +115,39 @@
                 </div>
             </div>
         </section>
+        <section id="booking" class="booking-section">
+            <h2>Book Your Tickets</h2>
+            <div class="booking-container">
+                <form id="booking-form" class="booking-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="event-select">Select Event</label>
+                        <select id="event-select" name="event" required>
+                            <option value="">-- Choose an Event --</option>
+                            <option value="summer-music-festival">Summer Music Festival</option>
+                            <option value="tech-conference">Tech Conference 2026</option>
+                            <option value="comedy-night">Comedy Night</option>
+                            <option value="inception-screening">Inception - Special Screening</option>
+                            <option value="basketball-finals">Championship Basketball Finals</option>
+                            <option value="pop-arena-tour">Global Pop Arena Tour</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="ticket-count">Number of Tickets</label>
+                        <input type="number" id="ticket-count" name="tickets" min="1" max="10" required placeholder="1">
+                    </div>
+                    <button type="submit" class="btn-submit">Confirm Booking</button>
+                </form>
+                <div id="form-message" class="form-message hidden"></div>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="footer-content">
