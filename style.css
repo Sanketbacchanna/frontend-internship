@@ -1,17 +1,21 @@
 /* Base styling and typography */
 :root {
+    /* Colors */
     --bg-color: #0f172a;
-    /* Slate 900 */
     --text-primary: #f8fafc;
-    /* Slate 50 */
     --text-secondary: #94a3b8;
-    /* Slate 400 */
     --accent-color: #6366f1;
-    /* Indigo 500 */
     --accent-hover: #4f46e5;
-    /* Indigo 600 */
     --card-bg: #1e293b;
-    /* Slate 800 */
+    --gradient-start: #818cf8;
+    --gradient-end: #c084fc;
+    --success-color: #10b981;
+    --success-hover: #059669;
+    --error-color: #ef4444;
+    --scrollbar-thumb: #334155;
+    --scrollbar-thumb-hover: #475569;
+
+    /* Typography */
     --font-family: 'Outfit', sans-serif;
 }
 
@@ -21,8 +25,11 @@
     box-sizing: border-box;
 }
 
-body {
+body, input, select, textarea, button {
     font-family: var(--font-family);
+}
+
+body {
     background-color: var(--bg-color);
     color: var(--text-primary);
     line-height: 1.6;
@@ -49,7 +56,7 @@ header {
 header h1 {
     font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #818cf8, #c084fc);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -132,7 +139,7 @@ main {
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, transparent, #818cf8, transparent);
+    background: linear-gradient(90deg, transparent, var(--gradient-start), transparent);
 }
 
 /* Event Grid Layout (Task 2 Layout & Spacing) */
@@ -242,7 +249,7 @@ main {
 }
 
 .btn-book.booked {
-    background: linear-gradient(135deg, #10b981, #059669);
+    background: linear-gradient(135deg, var(--success-color), var(--success-hover));
     box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
     transform: scale(0.98);
 }
@@ -278,7 +285,7 @@ main {
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, transparent, #818cf8, transparent);
+    background: linear-gradient(90deg, transparent, var(--gradient-start), transparent);
 }
 
 .booking-container {
@@ -363,13 +370,13 @@ main {
 
 .form-message.success {
     background-color: rgba(16, 185, 129, 0.1);
-    color: #10b981;
+    color: var(--success-color);
     border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 .form-message.error {
     background-color: rgba(239, 68, 68, 0.1);
-    color: #ef4444; /* Red 500 */
+    color: var(--error-color);
     border: 1px solid rgba(239, 68, 68, 0.2);
 }
 
@@ -397,7 +404,7 @@ footer {
 .footer-logo h2 {
     font-size: 1.2rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #818cf8, #c084fc);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -438,12 +445,12 @@ footer {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #334155;
+    background: var(--scrollbar-thumb);
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #475569;
+    background: var(--scrollbar-thumb-hover);
 }
 
 /* Responsive Design */
