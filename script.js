@@ -7,14 +7,43 @@ document.addEventListener("DOMContentLoaded", () => {
             // Prevent the default anchor link behavior
             event.preventDefault();
             
+            // Unselect all other buttons first
+            bookButtons.forEach(btn => {
+                if (btn !== this) {
+                    btn.classList.remove('booked');
+                    btn.textContent = 'Book Ticket';
+                }
+            });
+
             // Toggle the 'booked' class to change appearance
             this.classList.toggle('booked');
             
             // Update the button text based on its state
             if (this.classList.contains('booked')) {
-                this.textContent = 'Booked!';
+                this.textContent = 'Selected!';
+                
+                // Smart UI Feature: Auto-select the event in the dropdown
+                const eventName = this.parentNode.querySelector('h3').textContent;
+                const selectBox = document.getElementById('event-select');
+                if (selectBox) {
+                    Array.from(selectBox.options).forEach(option => {
+                        if (option.text === eventName) {
+                            selectBox.value = option.value;
+                        }
+                    });
+                }
+                
+                // Smart UI Feature: Smooth scroll to the booking section
+                const bookingSection = document.getElementById('booking');
+                if (bookingSection) {
+                    bookingSection.scrollIntoView({ behavior: 'smooth' });
+                }
             } else {
                 this.textContent = 'Book Ticket';
+                
+                // Reset select box if deselected
+                const selectBox = document.getElementById('event-select');
+                if (selectBox) selectBox.value = "";
             }
         });
     });
