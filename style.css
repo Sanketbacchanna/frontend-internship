@@ -447,10 +447,20 @@ footer {
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    main {
+        padding: 3rem 2rem;
+    }
+    
+    .introduction h2 {
+        font-size: 2.4rem;
+    }
+}
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1rem;
         padding: 1.5rem;
     }
     
@@ -469,8 +479,25 @@ footer {
         font-size: 2rem;
     }
     
+    .introduction p {
+        font-size: 1rem;
+    }
+    
     main {
         padding: 2rem 1rem;
+    }
+    
+    .events-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+    }
+
+    .booking-section {
+        padding: 2rem 1rem;
+    }
+
+    .booking-container {
+        padding: 1.5rem;
     }
     
     .footer-content {
@@ -482,5 +509,55 @@ footer {
     .footer-links {
         flex-wrap: wrap;
         justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    nav ul {
+        gap: 0.8rem;
+    }
+
+    nav a {
+        font-size: 0.95rem;
+    }
+
+    .introduction h2 {
+        font-size: 1.6rem;
+    }
+    
+    .event-listing h2, .booking-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-card {
+        padding: 1.5rem;
+    }
+
+    .event-image {
+        width: calc(100% + 3rem);
+        margin: -1.5rem -1.5rem 1rem -1.5rem;
+        height: 180px;
+    }
+
+    .btn-book {
+        width: 100%;
+        text-align: center;
+    }
+
+    .booking-container {
+        padding: 1.25rem;
     }
 }
